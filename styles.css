@@ -1,0 +1,281 @@
+/* Global Stylization */
+body {
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #0f0f0f;
+    color: #f5f5f5;
+}
+
+/* Header and Nav */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 30px;
+    background-color: #111;
+}
+
+nav a {
+    color: #f5f5f5;
+    margin-left: 20px;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+nav a:hover {
+    color: #d4af37;
+}
+
+/* Homepage Model Hero Section */
+.hero-models {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 30px;
+    padding: 30px;
+}
+
+.hero-text {
+    flex: 1;
+}
+
+.hero-text h2 {
+    font-size: 2.2rem;
+    margin-bottom: 15px;
+}
+
+.hero-text p {
+    color: #ccc;
+    font-size: 1.05rem;
+    max-width: 500px;
+}
+
+.model-showcase {
+    position: relative;
+    width: 100%;
+    height: 450px;
+    overflow: hidden;
+    border-radius: 12px;
+}
+
+.model-showcase img {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    animation: fadeCycle 10s infinite;
+}
+
+/* First image */
+.model-showcase img:nth-child(1) {
+    animation-delay: 0s;
+}
+
+/* Second image */
+.model-showcase img:nth-child(2) {
+    animation-delay: 5s;
+}
+
+@keyframes fadeCycle {
+    0%   { opacity: 0; }
+    10%  { opacity: 1; }
+    40%  { opacity: 1; }
+    50%  { opacity: 0; }
+    100% { opacity: 0; }
+}
+
+/* Optional Hero Section for other pages */
+.hero {
+    text-align: center;
+    padding: 40px 15px;
+    background: linear-gradient(to bottom, #111, #0f0f0f);
+}
+
+.hero h2 {
+    font-size: 2rem;
+    margin-bottom: 15px;
+}
+
+.hero p {
+    color: #ccc;
+    text-align: center;
+    margin: 0 auto;
+    max-width: 600px;
+}
+
+.featured h2 {
+    text-align:center ;
+}
+
+.featured p {
+    text-align: center;
+}
+
+/* Watch grid */
+.watch-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 20px;
+    padding: 20px;
+}
+
+.watch-card {
+    background-color: #1a1a1a;
+    padding: 15px;
+    border-radius: 10px;
+    text-align: center;
+    transition: 0.3s;
+}
+
+.watch-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.5);
+}
+
+.watch-card img {
+    width: 100%;
+    height: 170px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+/* Buttons and links */
+.btn,
+button {
+    background-color: #d4af37;
+    color: black;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    transition: 0.3s;
+    text-decoration: none;
+    display: inline-block;
+    border-radius: 6px;
+}
+
+.btn:hover,
+button:hover {
+    background-color: #b8962e;
+}
+
+/* Contact and About customization */
+.contact-section {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 15px;
+    padding: 10px 20px 20px;
+}
+.contact-info,
+.contact-form {
+    flex: 1;
+    min-width: 280px;
+    max-width: 420px;
+    text-align: center;
+}
+
+.contact-form form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    max-width: 260px;
+}
+
+.contact-form textarea {
+    height: 90px;
+    resize: vertical;
+}
+
+.about-section {
+    padding: 20px;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 15px;
+    background-color: #111;
+    margin-top: 20px;
+}
+
+/* Responsive Design */
+@media (max-width: 900px) {
+    .hero-models {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .hero-text p {
+        margin: 0 auto;
+    }
+
+    .model-showcase {
+        min-height: 760px;
+        width: 100%;
+    }
+
+    .model-one {
+        left: 50%;
+        transform: translateX(-60%);
+    }
+
+    .model-two {
+        left: 50%;
+        top: 280px;
+        transform: translateX(-40%);
+    }
+}
+
+@media (max-width: 600px) {
+    header {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    nav a {
+        margin: 0 10px;
+    }
+
+    .model-img {
+        width: 220px;
+        height: 300px;
+    }
+
+    .model-showcase {
+        min-height: 640px;
+    }
+
+    .model-two {
+        top: 240px;
+    }
+}
+/* About Section Customization */
+.about-section h3 {
+    text-align: center;
+}
+
+.about-section p {
+    text-align: center;
+}
+
+.why-choose-us h3 {
+    text-align: center;
+}
+
+.why-choose-us h4 {
+    text-align: center;
+}
+
+.why-choose-us p {
+    text-align: center;
+}
