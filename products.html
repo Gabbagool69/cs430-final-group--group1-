@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Products | KinG Watches</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://kit.fontawesome.com/d1c42c05aa.js" crossorigin="anonymous"></script>
+    <!-- added font awesome kit for cart icon -->
+</head>
+<body>
+
+<header>
+    <div class="logo">
+        <h1>KinG Watches</h1>
+        <p>Luxury in Every Second</p>
+    </div>
+
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="products.html">Products</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+        <a href="cart.html"><i class="fa-solid fa-bag-shopping"></i></a>
+    </nav>
+</header>
+
+<main>
+
+    <section class="hero">
+        <div class="hero-text">
+            <h2>Our Collection</h2>
+            <p>Explore timeless designs crafted with elegance, precision, and modern luxury.</p>
+        </div>
+    </section>
+
+    <!-- customization to add the products -->
+    <section class="featured">
+        <section class="catalog-section" aria-labelledby="luxury-watches-heading">
+            <div class="section-title">
+                <h2 id="luxury-watches-heading">Luxury Watches</h2>
+                <p>Exquisite timepieces crafted with the finest materials and attention to detail.</p>
+            </div>
+
+            <!--Filtering Buttons for differnet watches-->
+            <div class="filter-controls" aria-label="Filter watches by style">
+                <button type="button" class="filter-btn active" data-filter="all">All</button>
+                <button type="button" class="filter-btn" data-filter="sporty">Sporty</button>
+                 <button type="button" class="filter-btn" data-filter="timeless">Timeless</button>
+                <button type="button" class="filter-btn" data-filter="old-fashioned">Old Fashioned</button>
+                <button type="button" class="filter-btn" data-filter="modern">Modern</button>
+            </div>
+            <div id="luxury-watches-grid" class="product-grid" role="list"></div>
+        </section>
+
+        <div id="watch-modal" class="modal-backdrop" hidden>
+        <section
+            class="modal-panel"
+            role="dialog"
+            aria-modal="true"
+            aria-labelledby="modal-title"
+            aria-describedby="modal-description"
+        >
+            <button id="modal-close" class="modal-close" type="button" aria-label="Close product details">
+                &times;
+            </button>
+            <h3 id="modal-title"></h3>
+            <p id="modal-summary" class="modal-summary"></p>
+            <dl class="modal-details">
+                <div>
+                    <dt>Description</dt>
+                    <dd id="modal-description"></dd>
+                </div>
+                <div>
+                    <dt>Price</dt>
+                    <dd id="modal-price"></dd>
+                    <button id="modal-add-to-cart" type="button" class="btn btn-primary">Add to Cart</button>
+                </div>
+            </dl>
+        </section>
+        </div>
+
+        <!-- Products page cart sub-panel (opens in the same page) -->
+        <aside id="products-cart-panel" class="home-cart-panel" aria-hidden="true">
+            <div class="home-cart-head">
+                <h3>Cart</h3>
+                <button id="products-cart-close" type="button">Close</button>
+            </div>
+            <ul id="products-cart-list" class="home-cart-list"></ul>
+            <div id="products-cart-total" class="home-cart-total">Total: $0.00</div>
+            <button id="products-checkout-btn" type="button">Checkout</button>
+        </aside>
+
+        <!-- Checkout modal -->
+        <div id="products-checkout-modal" class="home-checkout-modal" aria-hidden="true">
+            <div class="home-checkout-box">
+                <h3>Checkout</h3>
+
+                <div id="products-checkout-list" class="home-checkout-list"></div>
+
+                <!--Customer Checkout Form-->
+                <form id="products-purchase-form" class="purchase-form">
+            <h4>Shipping Information</h4>
+
+            <input type="text" id="products-full-name" placeholder="Full Name" required>
+            <input type="text" id="products-address" placeholder="Street Address" required>
+            <input type="text" id="products-city" placeholder="City" required>
+            <input type="text" id="products-state" placeholder="State" required>
+            <input type="text" id="products-zip" placeholder="ZIP Code" required>
+
+            <h4>Payment Information</h4>
+
+            <input type="text" id="products-card-name" placeholder="Name on Card" required>
+            <input type="text" id="products-card-number" placeholder="Card Number" maxlength="16" required>
+            <input type="text" id="products-exp-date" placeholder="MM/YY" required>
+            <input type="text" id="products-cvv" placeholder="CVV" maxlength="4" required>
+
+            <button type="submit">Proceed with Purchase</button>
+        </form>
+
+        <p id="products-purchase-message" class="purchase-message"></p>
+
+        <button id="products-checkout-close" type="button">Close</button>
+            </div>
+        </div>
+        <!-- <div class="watch-grid">
+
+            <div class="watch-card">
+                <img src="images/watch1.jpg" alt="Watch 1">
+                <h3>Royal Gold</h3>
+                <p>$120</p>
+            </div>
+
+            <div class="watch-card">
+                <img src="images/watch2.jpg" alt="Watch 2">
+                <h3>Midnight Ash</h3>
+                <p>$140</p>
+            </div>
+
+            <div class="watch-card">
+                <img src="images/watch3.jpg" alt="Watch 3">
+                <h3>Obsidian Elite</h3>
+                <p>$160</p>
+            </div>
+
+            <div class="watch-card">
+                <img src="images/watch4.jpg" alt="Watch 4">
+                <h3>Imperial Chrono</h3>
+                <p>$180</p>
+            </div>
+
+            <div class="watch-card">
+                <img src="images/watch5.jpg" alt="Watch 5">
+                <h3>Prestige Classic</h3>
+                <p>$200</p>
+            </div>
+
+            <div class="watch-card">
+                <img src="images/watch6.jpg" alt="Watch 6">
+                <h3>Golden Horizon</h3>
+                <p>$220</p>
+            </div>
+
+            <div class="watch-card">
+                <img src="images/watch7.jpg" alt="Watch 7">
+                <h3>Velvet Noir</h3>
+                <p>$240</p>
+            </div>
+
+            <div class="watch-card">
+                <img src="images/watch8.jpg" alt="Watch 8">
+                <h3>Signature Luxe</h3>
+                <p>$260</p>
+            </div>
+
+            <div class="watch-card">
+                <img src="images/watch9.jpg" alt="Watch 9">
+                <h3>Diamond Edge</h3>
+                <p>$280</p>
+            </div>
+
+            <div class="watch-card">
+                <img src="images/watch10.jpg" alt="Watch 10">
+                <h3>Emerald Prime</h3>
+                <p>$300</p>
+            </div>
+
+        </div> -->
+    </section>
+
+</main>
+
+<footer>
+    <p>&copy; 2026 KinG Watches. All rights reserved.</p>
+</footer>
+<footer>
+    <p>&copy; 2026 KinG Watches</p>
+</footer>
+
+<!--Add to Cart Sound Effect-->
+<audio id="cart-ding-audio" preload="auto">
+    <source src="audios/cart-ding.mp3" type="audio/mpeg">
+</audio>
+
+<script src="script.js" defer></script>
+</body>
+</html>
