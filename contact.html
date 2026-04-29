@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact | KinG Watches</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<header>
+    <div class="logo">
+        <h1>KinG Watches</h1>
+        <p>Luxury in Every Second</p>
+    </div>
+
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="products.html">Products</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+    </nav>
+    </nav>
+</header>
+
+<main>
+
+    <!-- Banner section (matches other pages) -->
+    <section class="hero">
+        <div class="hero-text">
+            <h2>Contact Us</h2>
+            <p>We’re here to help with any questions or inquiries.</p>
+        </div>
+    </section>
+
+    <!-- Contact content -->
+    <section class="contact-section">
+
+        <div class="contact-info">
+            <h3>Get in Touch</h3>
+            <p><strong>Email:</strong> support@kingwatches.com</p>
+            <p><strong>Phone:</strong> (555) 123-4567</p>
+            <p><strong>Location:</strong> New York, NY</p>
+        </div>
+
+        <div class="contact-form">
+            <h3>Send a Message</h3>
+
+            <form>
+                <label for="name">Name:</label><br>
+                <input type="text" id="name" required><br><br>
+
+                <label for="email">Email:</label><br>
+                <input type="email" id="email" required><br><br>
+
+                <label for="message">Message:</label><br>
+                <textarea id="message" rows="5" required></textarea><br><br>
+
+                <button type="submit">Send</button>
+            </form>
+
+            <audio id="feedback-audio">
+                <source src="audios/feedback.mp3" type="audio/mpeg">
+            </audio>
+
+            <p id="feedback-message" class="feedback-message"></p>
+        </div>
+
+    </section>
+
+</main>
+
+<footer>
+    <p>&copy; 2026 KinG Watches. All rights reserved.</p>
+</footer>
+
+<script src="script.js" defer></script>
+</body>
+</html>
