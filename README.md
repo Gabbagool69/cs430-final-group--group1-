@@ -74,4 +74,4 @@ Flexible layouts (hero + product grid)
 
 Project Challenges:
 
-Live Website Link:
+Live Website Link: https://gabbagool69.github.io/cs430-final-group--group1-/
